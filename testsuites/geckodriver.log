@@ -1,0 +1,44 @@
+1510833855660	geckodriver	INFO	geckodriver 0.19.1
+1510833855660	geckodriver	INFO	Listening on 127.0.0.1:27795
+1510833857722	mozrunner::runner	INFO	Running command: "C:\\Program Files (x86)\\Mozilla Firefox\\firefox.exe" "-marionette" "-profile" "C:\\Users\\admin\\AppData\\Local\\Temp\\rust_mozprofile.PB3OEsQ62eZf"
+1510833858558	Marionette	INFO	Enabled via --marionette
+[GFX1-]: Could not get a DXGI adapter
+[GFX1-]: Could not get a DXGI adapter
+[GFX1-]: Could not get a DXGI adapter
+1510833860717	Marionette	INFO	Listening on port 27801
+1510833860903	Marionette	WARN	TLS certificate errors will be ignored for this session
+1510833860952	Marionette	DEBUG	Register listener.js for window 4294967297
+1510833860989	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1510833861523	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1510833861524	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+Unable to read VR Path Registry from C:\Users\admin\AppData\Local\openvr\openvrpaths.vrpath
+JavaScript error: https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/plugins/every_cookie_4644b13.js, line 4: ReferenceError: c is not defined
+1510833862412	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "https://www.baidu.com/"
+1510833862559	Marionette	DEBUG	Received DOM event "pageshow" for "https://www.baidu.com/"
+1510833863396	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510833866043	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+com/"
+[GFX1-]: Receive IPC [GFX1-]: Receive IPC close with reason=AbnormalShutdown
+close with reason=AbnormalShutdown
+1_20719&req=2&csor=3&pwd=se&cb=jQuery11020504280263365999_1510833842113&_=1510833842117, line 1: TypeError: jQuery11020504280263365999_1510833842113 is not a function
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=s&json=1&p=3&sid=25117_1437_21084_17001_20719&req=2&csor=1&cb=jQuery11020504280263365999_1510833842113&_=1510833842115, line 1: TypeError: jQuery11020504280263365999_1510833842113 is not a function
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=sele&json=1&p=3&sid=25117_1437_21084_17001_20719&req=2&csor=4&pwd=sel&cb=jQuery11020504280263365999_1510833842113&_=1510833842118, line 1: TypeError: jQuery11020504280263365999_1510833842113 is not a function
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=seleniu&json=1&p=3&sid=25117_1437_21084_17001_20719&req=2&csor=7&pwd=seleni&cb=jQuery11020504280263365999_1510833842113&_=1510833842121, line 1: TypeError: jQuery11020504280263365999_1510833842113 is not a function
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=se&json=1&p=3&sid=25117_1437_21084_17001_20719&req=2&csor=2&pwd=s&cb=jQuery11020504280263365999_1510833842113&_=1510833842116, line 1: TypeError: jQuery11020504280263365999_1510833842113 is not a function
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=selenium&json=1&p=3&sid=25117_1437_21084_17001_20719&req=2&csor=8&pwd=seleniu&cb=jQuery11020504280263365999_1510833842113&_=1510833842122, line 1: TypeError: jQuery11020504280263365999_1510833842113 is not a function
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=seleni&json=1&p=3&sid=25117_1437_21084_17001_20719&req=2&csor=6&pwd=selen&cb=jQuery11020504280263365999_1510833842113&_=1510833842120, line 1: TypeError: jQuery11020504280263365999_1510833842113 is not a function
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=selen&json=1&p=3&sid=25117_1437_21084_17001_20719&req=2&csor=5&pwd=sele&cb=jQuery11020504280263365999_1510833842113&_=1510833842119, line 1: TypeError: jQuery11020504280263365999_1510833842113 is not a function
+1510833843285	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510833845702	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+zu8AA54nxGko9WTAnF6hhy/su?wd=pytho&json=1&p=3&sid=25079_1421_24867_21098_18559_17001_20927&req=2&bs=selenium&pbs=selenium&csor=5&pwd=pyth&cb=jQuery110203873882224762999_1510833685071&_=1510833685086, line 1: TypeError: jQuery110203873882224762999_1510833685071 is not a function
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=python&json=1&p=3&sid=25079_1421_24867_21098_18559_17001_20927&req=2&bs=selenium&pbs=selenium&csor=6&pwd=pytho&cb=jQuery110203873882224762999_1510833685071&_=1510833685087, line 1: TypeError: jQuery110203873882224762999_1510833685071 is not a function
+1510833688533	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+[Child 8944, Chrome_ChildThread] WARNING: pipe error: 109: file z:/build/build/src/ipc/chromium/src/chrome/common/ipc_channel_win.cc, line 464
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
+um&csor=6&pwd=pytho&cb=jQuery110209770878105941337_1510545001970&_=1510545001986, line 1: TypeError: jQuery110209770878105941337_1510545001970 is not a function
+JavaScript error: https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=p&json=1&p=3&sid=1454_21078_17001_24879&req=2&bs=selenium&pbs=selenium&csor=1&pwd=selenium&cb=jQuery110209770878105941337_1510545001970&_=1510545001981, line 1: TypeError: jQuery110209770878105941337_1510545001970 is not a function
+1510545005788	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1510545007803	Marionette	INFO	New connections will no longer be accepted
+[GFX1-]: Receive IPC close with reason=AbnormalShutdown
