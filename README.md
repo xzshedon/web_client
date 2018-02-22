@@ -22,3 +22,9 @@ tools：浏览器驱动应用，方便在Win下测试
 
 
 For interesting.
+
+###### Mirror index of http://chromedriver.storage.googleapis.com/
+###### https://npm.taobao.org/mirrors/chromedriver/
+
+###### selenium之 chromedriver与chrome版本映射表
+###### http://blog.csdn.net/huilan_same/article/details/51896672

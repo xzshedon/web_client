@@ -149,6 +149,15 @@ class BasePage(object):
         except NameError as e:
             logger.error("Failed to click the element with %s" % e)
 
+    # 点击元素跳转到新的页面，返回新页面的driver
+    def click_to_otherpage(self, selector):
+        handles = self.driver.window_handles
+        self.click(selector)
+        for handle in self.driver.window_handles:
+            if not handle in handles:
+                self.driver.switch_to_window(handle)
+        return self.driver
+
             # 或者网页标题
 
     def get_page_title(self):
