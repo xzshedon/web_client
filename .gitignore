@@ -1,0 +1,11 @@
+.pyc
+
+.log
+
+.logs
+tools/
+
+.idea/
+logs/
+screenshots/
+test_report/
