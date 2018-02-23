@@ -2,8 +2,11 @@
 # -*- coding: UTF-8 -*-
 
 import logging
-import os.path
+import os
 import time
+
+# 相对路径的父路径就是项目根目录
+base_path = os.path.dirname(os.path.abspath('.'))
 
 
 class Logger(object):
@@ -18,11 +21,20 @@ class Logger(object):
         self.logger.setLevel(logging.DEBUG)
 
         # 创建一个handler，用于写入日志文件
-        rq = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
+        rq = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime(time.time()))
         # log_path = os.path.dirname(os.getcwd()) + '/Logs/'  # 项目根目录下/Logs 保存日志
-        log_path = os.path.dirname(os.path.abspath('.')) + '/logs/'
-        # 如果case组织结构式 /testsuit/featuremodel/xxx.py ， 那么得到的相对路径的父路径就是项目根目录
-        log_name = log_path + rq + '.logs'
+        self.log_path = base_path +'/test_reports/' + rq
+
+        # 判断路径是否存在
+        isExists = os.path.exists(self.log_path)
+
+        # 判断结果
+        if not isExists:
+            # 如果不存在则创建目录
+            # 创建目录操作函数
+            os.makedirs(self.log_path)
+
+        log_name = self.log_path + '/log.txt'
         fh = logging.FileHandler(log_name)
         fh.setLevel(logging.INFO)
 
@@ -41,3 +53,6 @@ class Logger(object):
 
     def getlog(self):
         return self.logger
+
+    def report_path(self):
+        return self.log_path

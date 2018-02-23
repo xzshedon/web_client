@@ -1,30 +1,25 @@
-# web_client
+##### Web_Client 轻量级的python+selenium Web 测试框架
 
-Simple Auto test for Web ui with Python.
+- Unittest + PageObject + HtmlTestRunner
 
-Unittest + PageObject + HtmlTestRunner
+- log + report + screenshot
 
-config：配置文件
+###### 目录结构
+- config：配置文件
 
-framework：主要的逻辑文件，包括POM基类base_page，浏览器选择器（简单封装），log内容配置，HTMLTestRunner
+- framework：主要的逻辑文件
+    - 包括POM基类base_page：定义对web页面的各种操作
+    - 浏览器选择器：选择启动什么浏览器，并返回一个driver
+    - log内容配置：命令执行log，保存在test_reports下，以脚本运行时间戳为文件名
+    - HTMLTestRunner：测试报告模板（开源）
+    
+- pageobjects：进行PageObject分类，以系统或模块为文件夹名字，并以页面作为page
 
-logs：运行LOG
+- test_report：存放log + report + screenshot
 
-pageobjects：进行PageObject分类
+- testsuites：每个页面的测试用例
 
-screenshots：截图保存，入口get_windows_img
-
-test_report：测试报告，HTMLTestRunner.HTMLTestRunner
-
-testsuites：测试用例
-
-tools：浏览器驱动应用，方便在Win下测试
+- tools：存放webdriver，Win用户请按照目录下的readme，按需下载，Linux请更改browser_engine的配置
 
 
-For interesting.
-
-###### Mirror index of http://chromedriver.storage.googleapis.com/
-###### https://npm.taobao.org/mirrors/chromedriver/
-
-###### selenium之 chromedriver与chrome版本映射表
-###### http://blog.csdn.net/huilan_same/article/details/51896672
+##### For FUN.

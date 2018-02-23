@@ -6,23 +6,25 @@ import os.path
 from selenium import webdriver
 from framework.logger import Logger
 
+# 打印浏览器控制log
 logger = Logger(logger="BrowserEngine").getlog()
+
+# 项目根目录下路径
+base_path = os.path.dirname(os.path.abspath('.'))
 
 
 class BrowserEngine(object):
-    dir = os.path.dirname(os.path.abspath('.'))  # 注意相对路径获取方法
-    chrome_driver_path = dir + '/tools/chromedriver.exe'
-    ie_driver_path = dir + '/tools/IEDriverServer.exe'
+    chrome_driver_path = base_path + '/tools/chromedriver.exe'
+    # ie_driver_path = dir + '/tools/IEDriverServer.exe'
 
     def __init__(self, driver):
         self.driver = driver
 
-        # read the browser type from config.ini file, return the driver
-
+    # 通过config.ini确定使用那个浏览器, 并返回driver对象
     def open_browser(self, driver):
         config = ConfigParser.ConfigParser()
         # file_path = os.path.dirname(os.getcwd()) + '/config/config.ini'
-        file_path = os.path.dirname(os.path.abspath('.')) + '/config/config.ini'
+        file_path = base_path + '/config/config.ini'
         config.read(file_path)
 
         browser = config.get("browserType", "browserName")

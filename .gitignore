@@ -1,11 +1,5 @@
 .pyc
-
 .log
-
+.exe
 .logs
-tools/
-
 .idea/
-logs/
-screenshots/
-test_report/

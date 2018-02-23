@@ -40,5 +40,5 @@ class Webpage(unittest.TestCase):
         ''' 10秒钟等待浏览器弹出的对话框，如果出现，就点击确定按钮'''
         # WebDriverWait(chromedriver, 10).until(EC.alert_is_present()).accept()
 
-if __name__=='__main__':
-    unittest.main()
+# if __name__=='__main__':
+#     unittest.main()

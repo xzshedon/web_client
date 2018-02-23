@@ -47,7 +47,8 @@ class TestSearch(unittest.TestCase):
         homepage.type_search('python')  # 调用页面对象中的方法
         homepage.send_submit_btn()  # 调用页面对象类中的点击搜索按钮方法
         time.sleep(2)
+        homepage.get_windows_img()
 
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()

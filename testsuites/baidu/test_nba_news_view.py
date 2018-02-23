@@ -35,5 +35,5 @@ class ViewNBANews(unittest.TestCase):
         self.driver.find_element_by_xpath("//*[@id='channel-submenu']/div/span[2]/a[1]").click()
         sportnewhome.get_windows_img()
 
-if __name__ == '__main__':
-    unittest.main()
+# if __name__ == '__main__':
+#     unittest.main()
