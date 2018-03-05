@@ -15,14 +15,14 @@ base_path = os.path.dirname(os.path.abspath('.'))
 
 class BrowserEngine(object):
     chrome_driver_path = base_path + '/tools/chromedriver.exe'
-
+    geckodriver_path = base_path + '/tools.geckodriver.exe'
     # ie_driver_path = dir + '/tools/IEDriverServer.exe'
 
     def __init__(self, driver):
         self.driver = driver
 
     # 通过config.ini确定使用那个浏览器, 并返回driver对象
-    def open_browser(self, driver,conf):
+    def open_browser(self, driver, conf):
         '''
 
         :param driver:
@@ -43,15 +43,28 @@ class BrowserEngine(object):
         # userdata = config.get("browserUserData", "userdata")
         userdata = conf["cookieData"]
         logger.info("The userdata is :%s" % userdata)
+        downloaddir = conf["downloaddir"]
 
         if browser == "Firefox":
-            driver = webdriver.Firefox()
+            if userdata != "":
+                profile = webdriver.FirefoxProfile(userdata)
+            else:
+                profile = webdriver.FirefoxProfile()
+            if downloaddir != "":
+                profile.set_preference('browser.download.dir', downloaddir)
+                profile.set_preference('browser.download.manager.showWhenStarting', False)
+                profile.set_preference('browser.download.folderList', 2)
+                profile.set_preference('browser.helperApps.neverAsk.saveToDisk', 'application/vnd.ms-excel')
+            driver = webdriver.Firefox(firefox_profile=profile)
             logger.info("Starting firefox browser.")
         elif browser == "Chrome":
             options = webdriver.ChromeOptions()
-            if userdata != "No":
+            if userdata:
                 options.add_argument(
                     "--user-data-dir=" + userdata)
+            if downloaddir:
+                options.add_experimental_option("prefs", {'profile.default_content_settings.popups': 0,
+                                                          'download.default_directory': downloaddir})
             options.add_experimental_option("excludeSwitches", ["ignore-certificate-errors"])
             # options.add_argument("--test-type", ["--ignore-certificate-errors"])
             driver = webdriver.Chrome(self.chrome_driver_path, chrome_options=options)

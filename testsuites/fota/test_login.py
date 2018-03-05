@@ -25,8 +25,12 @@ class TestLogin(unittest.TestCase):
         """
         cls.driver.quit()
 
+    def tearDown(self):
+        self.driver.quit()
+
     def test_fota_login(self):
         fota_login = Login(self.driver)
         fota_login.type_user("zengyuzhou")
-        fota_login.type_pwd("Test123")
-        fota_login.login()
+        fota_login.type_pwd("Test")
+        ss = fota_login.login()
+        fota_login.assert_True(ss,"it is not true!")

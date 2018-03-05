@@ -163,3 +163,10 @@ class BasePage(object):
         if expr is True:
             logger.warning("assertion failed! ")
             raise AssertionError(msg)
+
+    def accept_alert(self):
+        alert = self.driver.switch_to.alert
+        logger.info(alert.text.replace("\n",""))
+        alertlog = alert.text
+        alert.accept()
+        return alertlog
