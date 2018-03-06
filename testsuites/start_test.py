@@ -6,7 +6,9 @@ import os
 import time
 
 from framework import HTMLTestRunner
-from testsuites.baidu.test_search import TestSearch
+from testsuites.fota.test_login import TestLogin
+from testsuites.fota.download_imei import TestDownloadIMEI
+from testsuites.fota.test_delete_imei import TestDeleteIMEI
 
 # 获取系统当前时间
 now = time.strftime("%Y-%m-%d-%H_%M_%S", time.localtime(time.time()))
@@ -20,7 +22,9 @@ fp = file(HtmlFile, "wb")
 
 suite = unittest.TestSuite()
 # suite.addTest(TestSearch('test_baidu_search'))
-suite.addTest(TestSearch('test_search2'))
+# suite.addTest(TestUploadIMEI('test_upload_file'))
+suite.addTest(TestDeleteIMEI('test_delete_imei'))
+# suite.addTest(TestDownloadIMEI('test_download_file'))
 # suite.addTest(GetPageTitle('test_get_title'))
 
 # 构建suite

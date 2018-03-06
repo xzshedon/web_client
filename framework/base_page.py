@@ -71,37 +71,31 @@ class BasePage(object):
         selector_by = selector.split('=>')[0]
         selector_value = selector.split('=>')[1]
 
-        if selector_by == "i" or selector_by == 'id':
-            try:
+        try:
+            if selector_by == "i" or selector_by == 'id':
                 element = self.driver.find_element_by_id(selector_value)
-                logger.info("Find element successful by %s via value: %s " % (selector_by, selector_value))
-            except NoSuchElementException as e:
-                logger.error("NoSuchElementException: %s" % e)
-                self.get_windows_img()  # take screenshot
-        elif selector_by == "n" or selector_by == 'name':
-            element = self.driver.find_element_by_name(selector_value)
-        elif selector_by == "c" or selector_by == 'class_name':
-            element = self.driver.find_element_by_class_name(selector_value)
-        elif selector_by == "l" or selector_by == 'link_text':
-            element = self.driver.find_element_by_link_text(selector_value)
-        elif selector_by == "p" or selector_by == 'partial_link_text':
-            element = self.driver.find_element_by_partial_link_text(selector_value)
-        elif selector_by == "t" or selector_by == 'tag_name':
-            element = self.driver.find_element_by_tag_name(selector_value)
-        elif selector_by == "x" or selector_by == 'xpath':
-            try:
+            elif selector_by == "n" or selector_by == 'name':
+                element = self.driver.find_element_by_name(selector_value)
+            elif selector_by == "c" or selector_by == 'class_name':
+                element = self.driver.find_element_by_class_name(selector_value)
+            elif selector_by == "l" or selector_by == 'link_text':
+                element = self.driver.find_element_by_link_text(selector_value)
+            elif selector_by == "p" or selector_by == 'partial_link_text':
+                element = self.driver.find_element_by_partial_link_text(selector_value)
+            elif selector_by == "t" or selector_by == 'tag_name':
+                element = self.driver.find_element_by_tag_name(selector_value)
+            elif selector_by == "x" or selector_by == 'xpath':
                 element = self.driver.find_element_by_xpath(selector_value)
-                logger.info("Find element successful by %s via value: %s " % (selector_by, selector_value))
-            except NoSuchElementException as e:
-                logger.error("NoSuchElementException: %s" % e)
-                self.get_windows_img()
-        elif selector_by == "css" or selector_by == 'css_selector':
-            element = self.driver.find_element_by_css_selector(selector_value)
-        else:
-            raise NameError("Please enter a valid type of targeting elements.")
+            elif selector_by == "css" or selector_by == 'css_selector':
+                element = self.driver.find_element_by_css_selector(selector_value)
+            else:
+                raise NameError("Please enter a valid type of targeting elements.")
+        except NoSuchElementException as e:
+            logger.error("NoSuchElementException: %s" % e)
+            self.get_windows_img()
+            return None
 
         return element
-
 
     # 输入
     def type(self, selector, text):
@@ -130,8 +124,8 @@ class BasePage(object):
 
         el = self.find_element(selector)
         try:
+            logger.info("The element \' %s \' will be clicked." % el.get_attribute("value"))
             el.click()
-            logger.info("The element \' %s \' was clicked." % el.get_attribute("value"))
         except NameError as e:
             logger.error("Failed to click the element with %s" % e)
 
@@ -153,3 +147,26 @@ class BasePage(object):
     def sleep(seconds):
         time.sleep(seconds)
         logger.info("Sleep for %d seconds" % seconds)
+
+    def assert_True(self,expr, msg=None):
+        if expr is False:
+            logger.warning("assertion failed! ")
+            raise AssertionError(msg)
+
+    def assert_IsNotNone(self, obj, msg=None):
+        ele  = self.find_element(obj)
+        if ele is None:
+            logger.warning("assertion failed! ")
+            raise AssertionError(msg)
+
+    def assert_False(self,expr, msg=None):
+        if expr is True:
+            logger.warning("assertion failed! ")
+            raise AssertionError(msg)
+
+    def accept_alert(self):
+        alert = self.driver.switch_to.alert
+        logger.info(alert.text.replace("\n",""))
+        alertlog = alert.text
+        alert.accept()
+        return alertlog
